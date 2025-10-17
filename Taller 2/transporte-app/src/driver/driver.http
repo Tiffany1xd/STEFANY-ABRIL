@@ -1,0 +1,28 @@
+# Obtener todos los chóferes
+GET http://localhost:3000/driver
+
+# Obtener chófer por ID
+GET http://localhost:3000/driver/1
+
+# Crear un nuevo chófer
+POST http://localhost:3000/driver
+Content-Type: application/json
+
+{
+  "id": 3,
+  "nombre": "Andrés",
+  "licencia": "C3"
+}
+
+# Crear varios chóferes
+POST http://localhost:3000/driver/bulk
+Content-Type: application/json
+
+[
+  { "id": 4, "nombre": "Pedro", "licencia": "A2" }, 
+  { "id": 5, "nombre": "Luis", "licencia": "B1" }
+]
+# Aquí puedes agregar más chóferes si quieres o también cambiarlos para verificar que funcione
+# Aquí igual, si puedes correr esto y ver que funcione te lo agradecería un montón :D
+
+# Si ya todo funciona:D
