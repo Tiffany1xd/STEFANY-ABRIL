@@ -1,0 +1,21 @@
+# Obtener todos los buses
+GET http://localhost:3000/bus
+
+# Buscar bus por ID
+GET http://localhost:3000/bus/1 # Aquí se puede cambiar el ID para buscar diferentes buses según sea necesario
+
+# Actualizar capacidad
+PATCH http://localhost:3000/bus/1/capacidad 
+Content-Type: application/json
+
+{
+  "capacidad": 45 // Se puede cambiar la capacidad según sea necesario
+}
+
+# Actualizar placa
+PATCH http://localhost:3000/bus/2/placa 
+Content-Type: application/json 
+
+{
+  "placa": "JKL456"
+}
