@@ -1,5 +1,6 @@
+// src/peliculas/pelicula.entity.ts
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
-import { Funcion } from '../tickets/funcion.entity';
+import { Funcion } from 'src/funcion/funcion.entity'; // 👈 importa la entidad Funcion
 
 @Entity()
 export class Pelicula {
@@ -12,9 +13,16 @@ export class Pelicula {
   @Column()
   genero: string;
 
-  @Column()
-  duracion: number; // minutos
+  @Column('int')
+  duracion: number;
 
+  @Column({ nullable: true })
+  sinopsis?: string;
+
+  @Column({ default: true })
+  activo: boolean;
+
+  // 🔹 Relación inversa con Funcion
   @OneToMany(() => Funcion, (funcion) => funcion.pelicula)
   funciones: Funcion[];
 }
